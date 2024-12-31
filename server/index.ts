@@ -13,13 +13,14 @@ import { ServerMonitor } from "./services/serverMonitor";
 const app = express();
 const httpServer = createServer(app);
 
-app.use("/api", imageProxyRouter);
+app.use("/api/proxy-image", imageProxyRouter);
 
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://reccon.sammwy.com",
     methods: ["GET", "POST"],
   },
+  path: "/api",
 });
 
 const searchQueue = new SearchQueue();
