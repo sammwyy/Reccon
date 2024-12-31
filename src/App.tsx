@@ -12,7 +12,7 @@ import { SearchView } from "./components/SearchView";
 import { ServerStatusBar } from "./components/ServerStatusBar";
 import "./styles/background-pattern.css";
 
-const socket = io("/api");
+const socket = io("https://reccon.sammwy.com/");
 
 const initialProgress = {
   current: 0,

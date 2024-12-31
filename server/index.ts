@@ -17,10 +17,9 @@ app.use("/api/proxy-image", imageProxyRouter);
 
 const io = new Server(httpServer, {
   cors: {
-    origin: "https://reccon.sammwy.com",
+    origin: ["http://localhost:5173", "https://reccon.sammwy.com"],
     methods: ["GET", "POST"],
   },
-  path: "/api",
 });
 
 const searchQueue = new SearchQueue();
